@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MyTestApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+		MaxHeight="200" MaxWidth="300"
+        x:Class="MyTestApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MyTestApp">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+		    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		    	<Button Height="30" Width="100" HorizontalContentAlignment="Center" Command="{Binding StartProcces}" IsEnabled="{Binding isEnabled}">Start</Button>
+				<Button Height="30" Width="100" HorizontalContentAlignment="Center" Command="{Binding StopProcces}">Stop</Button>
+		    </StackPanel>
+		    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+					<TextBlock Text="{Binding TextPrev}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+				</StackPanel>
+        </StackPanel>
+	</ScrollViewer>
+</Window>
